@@ -102,23 +102,23 @@
                     </div>
                 </div>
                 <div id="navigator" class="padding-horizontal mt-5">
-                    <div class="navigator-item">
-                        <a href="#about-us" onclick="ga('send', 'event', 'EventCategoryName', 'EventName');">
+                    <div class="navigator-item" data-nav="AboutUs">
+                        <a href="#about-us">
                             <p class="color-primary">About</p>
                         </a>
                     </div>
-                    <div class="navigator-item">
-                        <a href="#expertise" onclick="ga('send', 'event', 'EventCategoryName', 'EventName');">
+                    <div class="navigator-item" data-nav="Expertise">
+                        <a href="#expertise">
                         <p class="color-primary">Expertise</p>
                     </a>
                     </div>
-                    <div class="navigator-item">
-                        <a href="#get-started" onclick="ga('send', 'event', 'EventCategoryName', 'EventName');">
+                    <div class="navigator-item" data-nav="GetStarted">
+                        <a href="#get-started">
                         <p class="color-primary">Get Started</p>
                     </a>
                     </div>
-                    <div class="navigator-item">
-                        <a href="#what-we-do" onclick="ga('send', 'event', 'EventCategoryName', 'EventName');">
+                    <div class="navigator-item" data-nav="WhatWeDo">
+                        <a href="#what-we-do">
                         <p class="color-primary">What we do</p>
                     </a>
                     </div>
@@ -882,17 +882,12 @@
 
         $(window).scroll(function() {
 
-            console.log("window", $(window).scrollTop());
-            // console.log("target", targetElement.offset().top);
-
             if (targetElement.length && $(window).scrollTop() > targetElement.offset().top) 
             {   
                 if(!$("#desktop #navigator").hasClass("sticky"))
                 {
                     $("#desktop #navigator").addClass("sticky");
                 }
-
-                console.log("in");
             } 
             else 
             {
@@ -900,9 +895,17 @@
                 {
                     $("#desktop #navigator").removeClass("sticky");
                 }
-
-                console.log("out");
             }
+        });
+
+        $("#desktop .navigator-item").click(function(){
+
+            var type = $(this).attr("data-nav");
+
+            gtag('event', 'click', {
+                'event_category': 'Button',
+                'event_label': type
+            });
         });
 
         function renderCarousel(){
@@ -971,6 +974,7 @@
 
     </script>
     <script>
+
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
