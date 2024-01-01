@@ -1,8 +1,11 @@
 html, body{
     padding: 0;
     margin: 0; 
-    height: 100%; 
     line-height: normal;
+}
+
+div{
+    overflow-y: hidden;
 }
 
 /* THEME */
@@ -223,6 +226,13 @@ a:active { text-decoration: underline; }
     font-size: 0.938rem;
     font-weight: 500;
     width: 25%;
+}
+
+#desktop #navigator.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 0px !important;
 }
 
 /* ABOUT US SECTION */
