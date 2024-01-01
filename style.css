@@ -5,7 +5,8 @@ html, body{
 }
 
 div{
-    overflow-y: hidden;
+    overflow-x: hidden;
+
 }
 
 /* THEME */
@@ -21,16 +22,37 @@ div{
 .padding-horizontal{
     padding-left: 108px;
     padding-right: 96px;
-}
+    
 
+}
+.padding-horizontal-1{
+    padding-left: 30px;
+    padding-right: 96px;
+    
+
+}
+.padding-horizontal-mobile-nav{
+    padding-left: 40px;
+    padding-right: 20px;
+}
 .padding-horizontal-mobile{
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 20px;
 }
 
 .margin-horizontal{ 
     margin-left: 108px;
     margin-right: 96px;
+    overflow-y: hidden;
+
+    
+}
+
+.no-underline{
+    overflow-y: hidden;
+    margin-left: -0px;
+    width: 95%;
+
 }
 
 .margin-horizontal-mobile{ 
@@ -230,9 +252,10 @@ a:active { text-decoration: underline; }
 
 #desktop #navigator.sticky {
     position: fixed;
-    top: 0;
+    overflow: hidden;
+    bottom: 0;
     width: 100%;
-    margin-top: 0px !important;
+    
 }
 
 /* ABOUT US SECTION */
