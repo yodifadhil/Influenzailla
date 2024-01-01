@@ -51,6 +51,7 @@ div{
 .no-underline{
     overflow-y: hidden;
     margin-left: -0px;
+    margin-bottom: 50px;
     width: 95%;
 
 }
